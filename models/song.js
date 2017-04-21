@@ -21,7 +21,7 @@ const Song = bookshelf.Model.extend({
 
   getSingleSong: function(id) {
     console.log("Get single song function called")
-    return this.forge({id})
+    return this.forge(id)
     .fetch()
     .then( (song) => {
       return song

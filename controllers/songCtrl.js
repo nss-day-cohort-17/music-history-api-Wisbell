@@ -20,6 +20,7 @@ module.exports.getSongs = (req, res, next) => {
 
 module.exports.getOneSong = ( { params: {id} }, res, next) => {
   console.log('getOneSong function in songCtrl called')
+  // console.log('id', id)
   Song.getSingleSong(id)
   .then( (song) => {
     res.status(200).json(song)
