@@ -8,6 +8,7 @@ let app = express()
 const routes = require('./routes/') // gets index.js
 
 // <Setup your routes middleware>
+app.use(bodyParser.json());
 app.use('/api/v1/', routes)
 
 // <catch any undefined routes with a 404 middleware>
@@ -31,7 +32,7 @@ app.use( (err, req, res, next) => {
 })
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })

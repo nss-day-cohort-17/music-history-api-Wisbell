@@ -30,3 +30,16 @@ module.exports.getOneSong = ( { params: {id} }, res, next) => {
   })
 }
 // <stretch goal: methods for adding, deleting, editing a song>
+
+
+// add a song
+
+module.exports.addSong = ({body}, res, next) => {
+  Song.forge(body)
+  .save()
+  // .then( () => res.status(201).json({'msg': 'New song added!'}))
+  .then( () => res.status(200).json({'msg': 'New song added!'}))
+  .catch( (error) => {
+    next(error)
+  })
+}
