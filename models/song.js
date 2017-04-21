@@ -5,7 +5,7 @@ const { bookshelf } = require('../db/database')
 // static methods for getting one or all songs from the db>
 
 const Song = bookshelf.Model.extend({
-  tableName: 'Song',
+  tableName: 'Song'
 }, {
   getAllSongs: () => {
     console.log("Get all songs function called")
