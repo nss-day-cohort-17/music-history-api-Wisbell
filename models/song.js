@@ -7,7 +7,7 @@ const { bookshelf } = require('../db/database')
 const Song = bookshelf.Model.extend({
   tableName: 'Song'
 }, {
-  getAllSongs: () => {
+  getAllSongs: function() {
     console.log("Get all songs function called")
     return this.forge()
     .fetchAll()
@@ -19,7 +19,7 @@ const Song = bookshelf.Model.extend({
     })
   },
 
-  getSingleSong: (id) => {
+  getSingleSong: function(id) {
     console.log("Get single song function called")
     return this.forge({id})
     .fetch()
